@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zotero 翻译</title>
+    <link rel="stylesheet" href="translation.css" />
+    <script src="translation.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">译</span>
+          <div class="brand-text">
+            <h1>Zotero 翻译</h1>
+            <p id="engine-label">目标：简体中文 · 引擎：智能选择</p>
+          </div>
+        </div>
+        <button id="btn-cancel" class="btn danger hidden" type="button">
+          停止
+        </button>
+      </header>
+
+      <div class="toolbar">
+        <button
+          id="btn-selection"
+          class="btn primary"
+          type="button"
+          title="翻译鼠标选中的文字（支持 PDF 阅读器、网页侧边栏和翻译面板）"
+        >
+          翻译选中
+        </button>
+        <button id="btn-pdf" class="btn" type="button">翻译 PDF 全文</button>
+        <button id="btn-pdf-summary" class="btn" type="button">
+          翻译并总结 PDF
+        </button>
+      </div>
+
+      <div id="progress-wrap" class="progress-wrap hidden">
+        <div class="progress-meta">
+          <span id="status-text">就绪</span>
+          <span id="progress-text"></span>
+        </div>
+        <div class="progress-bar">
+          <div id="progress-fill"></div>
+        </div>
+      </div>
+
+      <div id="notice" class="notice hidden"></div>
+
+      <main id="main-scroll">
+        <div id="dropzone" class="dropzone">
+          <div class="drop-icon">⇣</div>
+          <div class="drop-title">拖入 Zotero 文献或 PDF 开始</div>
+          <div class="drop-sub">
+            先用鼠标选中文字即可翻译；也可以使用上方按钮翻译 PDF 全文、右键菜单或阅读器工具栏一键开始。
+          </div>
+        </div>
+
+        <div id="result" class="result hidden">
+          <div class="result-head">
+            <h2 id="result-title"></h2>
+            <div id="result-meta" class="result-meta"></div>
+          </div>
+
+          <div id="tabs" class="tabs">
+            <button class="tab active" data-tab="summary" id="tab-summary" type="button">
+              总结
+            </button>
+            <button class="tab" data-tab="translation" id="tab-translation" type="button">
+              译文
+            </button>
+            <button class="tab" data-tab="meta" id="tab-meta" type="button">
+              题录
+            </button>
+          </div>
+
+          <section id="panel-summary" class="panel"></section>
+          <section id="panel-translation" class="panel hidden"></section>
+          <section id="panel-meta" class="panel hidden"></section>
+        </div>
+      </main>
+
+      <footer id="actions" class="actions hidden">
+        <button id="btn-copy-summary" class="btn small" type="button">
+          复制总结
+        </button>
+        <button id="btn-copy-translation" class="btn small" type="button">
+          复制译文
+        </button>
+        <button id="btn-save-note" class="btn small" type="button">
+          保存为笔记
+        </button>
+        <button id="btn-web-ai" class="btn small" type="button">
+          复制全文到网页 AI
+        </button>
+      </footer>
+
+      <div id="toast" class="toast hidden"></div>
+
+      <div id="drop-overlay" class="drop-overlay hidden">
+        <div class="drop-overlay-inner">
+          <div class="drop-icon">⇣</div>
+          <div>释放以提取 PDF 全文并翻译总结</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,283 @@
+<vbox
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  id="zotero-web-preferences-root"
+  flex="1"
+  style="overflow: auto; padding: 20px"
+  onload="if (typeof ZoteroWeb_Preferences !== 'undefined') ZoteroWeb_Preferences.init(event)"
+>
+  <html:style>
+    #zotero-web-preferences-root {
+      background: #f7f8fb;
+      color: #24313d;
+    }
+
+    #zotero-web-preferences-root groupbox {
+      margin: 0;
+      padding: 14px;
+      border: 1px solid #dde3ea;
+      border-radius: 8px;
+      background: #ffffff;
+    }
+
+    #zotero-web-preferences-root caption {
+      font-weight: 700;
+      color: #1f2937;
+    }
+
+    #zotero-web-preferences-root label {
+      color: #344454;
+    }
+
+    #zotero-web-preferences-root html|input,
+    #zotero-web-preferences-root html|textarea,
+    #zotero-web-preferences-root html|select {
+      box-sizing: border-box;
+      border: 1px solid #c6d1dc;
+      border-radius: 6px;
+      background: #ffffff;
+      color: #1f2937;
+      font: inherit;
+    }
+
+    #zotero-web-preferences-root html|input {
+      min-height: 30px;
+      padding: 4px 8px;
+    }
+
+    #zotero-web-preferences-root html|textarea {
+      padding: 8px;
+      line-height: 1.45;
+    }
+
+    #zotero-web-preferences-root html|select {
+      padding: 4px;
+    }
+
+    #zotero-web-preferences-root html|input:focus,
+    #zotero-web-preferences-root html|textarea:focus,
+    #zotero-web-preferences-root html|select:focus {
+      border-color: #5c93a8;
+      outline: 2px solid rgba(92, 147, 168, 0.18);
+      outline-offset: 0;
+    }
+
+    .zotero-web-pref-button,
+    #zotero-web-preferences-root html|button {
+      min-height: 30px;
+      padding: 4px 12px;
+      border: 1px solid #c7d2de;
+      border-radius: 6px;
+      background: linear-gradient(#ffffff, #f6f8fa);
+      color: #24313d;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    #zotero-web-preferences-root html|button:hover {
+      background: #edf5f8;
+      border-color: #7ea7b8;
+    }
+
+    #zotero-web-preferences-root html|button:active {
+      background: #dfeef3;
+      border-color: #5c93a8;
+    }
+
+    #zotero-web-preferences-root html|button:disabled {
+      opacity: 0.45;
+      cursor: default;
+    }
+  </html:style>
+
+  <groupbox>
+    <caption label="Zotero Web" />
+
+    <grid>
+      <columns>
+        <column />
+        <column flex="1" />
+      </columns>
+      <rows>
+        <row align="start">
+          <label value="首页选项" control="zotero-web-homepage" />
+          <html:textarea
+            id="zotero-web-homepage"
+            style="width: 100%; min-height: 72px; resize: vertical"
+            placeholder="https://chatgpt.com/&#10;https://chat.deepseek.com/"
+          />
+        </row>
+        <row align="center">
+          <label value="侧边栏宽度" control="zotero-web-sidebar-width" />
+          <html:input
+            id="zotero-web-sidebar-width"
+            type="number"
+            min="320"
+            max="1200"
+            step="20"
+            style="width: 100%"
+          />
+        </row>
+      </rows>
+    </grid>
+
+    <description style="margin-top: 12px; color: #666">
+      每行一个首页地址。侧边栏首次打开会加载第一个地址，顶部“主页”菜单可切换到其他首页。
+    </description>
+    <hbox align="center" pack="end" style="margin-top: 10px">
+      <description
+        id="zotero-web-pref-general-status"
+        hidden="true"
+        style="color: #666; margin-right: 12px"
+      />
+      <html:button id="zotero-web-pref-general-save" type="button">
+        保存设置
+      </html:button>
+    </hbox>
+  </groupbox>
+
+  <groupbox style="margin-top: 16px">
+    <caption label="翻译设置" />
+
+    <hbox align="stretch">
+      <vbox flex="1" style="min-width: 140px; margin-right: 10px">
+        <label
+          value="目标语言"
+          control="zotero-web-pref-translation-target"
+          style="margin-bottom: 4px"
+        />
+        <html:select
+          id="zotero-web-pref-translation-target"
+          style="width: 100%; min-width: 140px"
+        >
+          <html:option value="zh-CN">简体中文</html:option>
+          <html:option value="zh-TW">繁體中文</html:option>
+          <html:option value="en">English</html:option>
+          <html:option value="ja">日本語</html:option>
+          <html:option value="ko">한국어</html:option>
+        </html:select>
+      </vbox>
+
+      <vbox flex="1" style="min-width: 180px; margin-right: 10px">
+        <label
+          value="翻译引擎"
+          control="zotero-web-pref-translation-engine"
+          style="margin-bottom: 4px"
+        />
+        <html:select
+          id="zotero-web-pref-translation-engine"
+          style="width: 100%; min-width: 180px"
+        >
+          <html:option value="auto">智能选择</html:option>
+          <html:option value="microsoft">微软 Bing 翻译（免费）</html:option>
+          <html:option value="google">Google 翻译（免费）</html:option>
+          <html:option value="llm">AI 大模型</html:option>
+        </html:select>
+      </vbox>
+
+      <vbox flex="1" style="min-width: 150px">
+        <label
+          value="大模型预设"
+          control="zotero-web-pref-llm-preset"
+          style="margin-bottom: 4px"
+        />
+        <html:select
+          id="zotero-web-pref-llm-preset"
+          style="width: 100%; min-width: 150px"
+        >
+          <html:option value="custom">自定义</html:option>
+          <html:option value="deepseek">DeepSeek</html:option>
+          <html:option value="openai">OpenAI</html:option>
+          <html:option value="siliconflow">SiliconFlow</html:option>
+          <html:option value="ollama">Ollama</html:option>
+          <html:option value="lmstudio">LM Studio</html:option>
+        </html:select>
+      </vbox>
+    </hbox>
+
+    <hbox align="stretch" style="margin-top: 10px">
+      <vbox flex="1" style="min-width: 200px; margin-right: 10px">
+        <label
+          value="API 地址"
+          control="zotero-web-pref-llm-base"
+          style="margin-bottom: 4px"
+        />
+        <html:input
+          id="zotero-web-pref-llm-base"
+          type="text"
+          placeholder="https://api.deepseek.com"
+          style="width: 100%; min-width: 200px"
+        />
+      </vbox>
+
+      <vbox style="width: 190px; min-width: 160px; margin-right: 10px">
+        <label
+          value="API Key"
+          control="zotero-web-pref-llm-key"
+          style="margin-bottom: 4px"
+        />
+        <html:input
+          id="zotero-web-pref-llm-key"
+          type="password"
+          placeholder="sk-..."
+          style="width: 100%"
+        />
+      </vbox>
+
+      <vbox style="width: 180px; min-width: 150px">
+        <label
+          value="模型名称"
+          control="zotero-web-pref-llm-model"
+          style="margin-bottom: 4px"
+        />
+        <html:input
+          id="zotero-web-pref-llm-model"
+          type="text"
+          placeholder="deepseek-chat"
+          style="width: 100%"
+        />
+      </vbox>
+    </hbox>
+
+    <hbox align="stretch" style="margin-top: 10px">
+      <vbox style="width: 230px; min-width: 190px">
+        <label
+          value="全文最大字符数"
+          control="zotero-web-pref-translation-max"
+          style="margin-bottom: 4px"
+        />
+        <html:input
+          id="zotero-web-pref-translation-max"
+          type="number"
+          min="4000"
+          max="1000000"
+          step="1000"
+          style="width: 100%"
+        />
+      </vbox>
+    </hbox>
+
+    <description style="margin-top: 12px; color: #666; line-height: 1.5">
+      引擎“智能选择”会优先使用已配置的可用大模型；没有可用大模型时使用微软 Bing 免费翻译，失败后自动回退 Google（Google 在部分网络环境下需要代理）。
+      API Key 以明文保存在 Zotero 偏好中。全文超过最大字符数时会按该值截断。翻译内容会发送到所选翻译服务或大模型服务。
+    </description>
+    <hbox align="center" pack="end" style="margin-top: 10px">
+      <description
+        id="zotero-web-pref-translation-status"
+        hidden="true"
+        style="color: #666; margin-right: 12px"
+      />
+      <html:button id="zotero-web-pref-translation-test" type="button">
+        测试
+      </html:button>
+      <html:button
+        id="zotero-web-pref-translation-save"
+        type="button"
+        style="margin-left: 8px"
+      >
+        保存设置
+      </html:button>
+    </hbox>
+  </groupbox>
+</vbox>

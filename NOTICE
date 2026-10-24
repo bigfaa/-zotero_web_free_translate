@@ -1,0 +1,28 @@
+Zotero Web — attribution and notices
+====================================
+
+Original project:
+  https://github.com/zhangxincode/zotero_web
+  Original author: zhangxincode (commits by zhangxingitee)
+  Copyright (c) 2026 zhangxincode (zhangxingitee)
+  Used with permission for this derivative.
+
+Modifications and additions:
+  Copyright (c) 2026 bigfaa
+  https://github.com/bigfaa
+
+License:
+  MIT License. See LICENSE for the full text.
+
+This derivative contains substantial modifications, including:
+  - sidebar web / translation mode switching
+  - selected-text translation from the PDF reader and web sidebar
+  - PDF full-text translation and summaries
+  - local PDF translation cache and summary reuse
+  - Bing, Google and OpenAI-compatible translation providers
+  - redesigned preferences page and updated icons
+
+The original project's repository did not include a LICENSE file at the time
+this derivative was prepared. Permission for this derivative was obtained from
+the original author. Keep the original attribution and this notice when
+redistributing.

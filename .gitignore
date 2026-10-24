@@ -1,0 +1,11 @@
+.claude/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+dist/zotero_web_0.1.*.xpi
+dist/zotero_web_0.2.0.xpi
+dist/zotero_web_0.2.1.xpi
+dist/zotero_web_0.2.2.xpi
+dist/zotero_web_0.2.3.xpi
+dist/zotero_web.xpi

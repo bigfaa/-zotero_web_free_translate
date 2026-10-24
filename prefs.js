@@ -1,0 +1,10 @@
+pref("extensions.zotero.zoteroWeb.homepages", "[\"https://chatgpt.com/\",\"https://chat.deepseek.com/\"]");
+pref("extensions.zotero.zoteroWeb.homepage", "https://chatgpt.com/");
+pref("extensions.zotero.zoteroWeb.sidebarWidth", "520");
+pref("extensions.zotero.zoteroWeb.prompts", "[]");
+pref("extensions.zotero.zoteroWeb.translationTarget", "zh-CN");
+pref("extensions.zotero.zoteroWeb.translationEngine", "auto");
+pref("extensions.zotero.zoteroWeb.llmBaseURL", "");
+pref("extensions.zotero.zoteroWeb.llmApiKey", "");
+pref("extensions.zotero.zoteroWeb.llmModel", "");
+pref("extensions.zotero.zoteroWeb.fullTextMaxChars", "120000");

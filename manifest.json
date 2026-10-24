@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Zotero Web",
+  "version": "0.2.4",
+  "description": "Open web pages inside a Zotero sidebar, with item and PDF translation.",
+  "author": "zhangxin",
+  "icons": {
+    "48": "content/icons/logo-48.png",
+    "96": "content/icons/logo-96.png"
+  },
+  "applications": {
+    "zotero": {
+      "id": "zotero-web@zhangxin.local",
+      "update_url": "https://example.com/zotero-web/update.json",
+      "strict_min_version": "9.0.0",
+      "strict_max_version": "10.0.*"
+    }
+  }
+}
