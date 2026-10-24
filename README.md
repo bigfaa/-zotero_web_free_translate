@@ -181,7 +181,7 @@ NOTICE                            来源与署名
 
 ## 来源与许可
 
-本项目部分代码基于/参考 [zhangxincode/zotero_web](https://github.com/zhangxincode/zotero_web)（原作者 zhangxincode / zhangxingitee），已获得原作者授权在此基础上修改与发布，并保留原项目署名与链接。
+本项目部分代码基于/参考 [zhangxincode/zotero_web](https://github.com/zhangxincode/zotero_web)（原作者 zhangxincode / zhangxingitee），并保留原项目署名与链接。
 
 - 原项目版权：Copyright (c) 2026 zhangxincode (zhangxingitee)
 - 修改与新增部分版权：Copyright (c) 2026 bigfaa
